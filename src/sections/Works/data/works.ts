@@ -1,6 +1,6 @@
 const works = [
   {
-    poster: '../../video/nosis.mov',
+    poster: './video/nosis.mov',
     title: 'Nosis.io',
     category: 'Backend разработчик',
     stack: ['Express', 'Sequelize', 'Passport.JS', 'Socket.IO'],
@@ -9,7 +9,7 @@ const works = [
     изучить курсы криптовалют и акций, а также отслеживать свою прибыль или убытки за определенный период.`,
   },
   {
-    poster: '../../video/weed-finder.mp4',
+    poster: './video/weed-finder.mp4',
     title: 'Weed-Finder',
     category: 'Frontend и Backend разработчик',
     stack: ['Expo', 'React', 'GraphQL', 'Prisma', 'Strapi', 'Tailwind', 'Expo', 'React Native'],
@@ -17,7 +17,7 @@ const works = [
     desc: `Weed-Finder - это платформа, которая позволяет найти и создать точки продажи cannabis на территории Канады, США, Европы и Тайланда`,
   },
   {
-    poster: '../../video/free-task.mkv',
+    poster: './video/free-task.mp4',
     title: 'Free Task (Pet проект)',
     category: 'Frontend и Backend разработчик',
     stack: ['Next.JS', 'React', 'Redux', 'Redux-Toolkit', 'NestJS', 'Sequelize', 'Mantine', 'Swagger'],

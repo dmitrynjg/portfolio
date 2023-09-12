@@ -3,6 +3,7 @@ import React from 'react';
 import { useLocalStorage } from '@mantine/hooks';
 import { useScrollIntoView } from '@mantine/hooks';
 import { NavBarScroll } from '../context/NavBar';
+import { MantineColor } from '../context/MantineColor';
 
 export const App = ({ children }: { children: React.ReactNode }) => {
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
@@ -12,7 +13,7 @@ export const App = ({ children }: { children: React.ReactNode }) => {
   });
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
-  
+
   const { scrollIntoView: scrollIntoAbout, targetRef: aboutRef } = useScrollIntoView<HTMLDivElement>({
     offset: 60,
   });
@@ -52,9 +53,9 @@ export const App = ({ children }: { children: React.ReactNode }) => {
         <NavBarScroll.Provider
           value={{ scrollIntoAbout, scrollIntoWork, scrollIntoContacts, aboutRef, worksRef, contactsRef }}
         >
-          {children}
+          <MantineColor.Provider value={{ colorScheme, toggleColorScheme }}>{children}</MantineColor.Provider>
         </NavBarScroll.Provider>
       </MantineProvider>
     </ColorSchemeProvider>
   );
-}
+};

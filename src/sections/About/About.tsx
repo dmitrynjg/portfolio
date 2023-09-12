@@ -74,7 +74,7 @@ export const About = () => {
 
         <motion.img
           variants={rightAnimation}
-          src={'../../images/animated.gif'}
+          src={'./images/animated.gif'}
           className={classes.image}
         />
       </motion.section>

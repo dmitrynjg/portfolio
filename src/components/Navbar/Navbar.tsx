@@ -1,5 +1,5 @@
-import React from 'react';
-import { Header, Group, ActionIcon, Text, useMantineColorScheme, Burger } from '@mantine/core';
+import React, { useContext, useEffect, useState } from 'react';
+import { Header, Group, ActionIcon, useMantineColorScheme, Burger } from '@mantine/core';
 import { useStyles } from './style';
 import { IconSun, IconMoonStars } from '@tabler/icons-react';
 import { useNabarMenu } from '../../helpers/hooks/useNabarMenu';
@@ -7,6 +7,7 @@ import { Logo } from '../Logo/Logo';
 import NavbarMainLink from './NavbarMainLinks/NavBarMainLink';
 import { MainContainer } from '../MainContainer/MainContainer';
 import { useHeadroom } from '@mantine/hooks';
+import { MantineColor } from '../../context/MantineColor';
 
 export const NavbarListLink = ({ className }: { className?: string }) => {
   const { scrolls } = useNabarMenu();
@@ -45,7 +46,8 @@ export const NavbarListLink = ({ className }: { className?: string }) => {
 
 export const Navbar = () => {
   const { classes, cx } = useStyles();
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const { colorScheme, toggleColorScheme } : any = useContext(MantineColor);
+
   const { isOpen, toggleMenu } = useNabarMenu();
   const pinned = useHeadroom({ fixedAt: 90 });
 
